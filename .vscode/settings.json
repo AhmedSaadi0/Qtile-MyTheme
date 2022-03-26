@@ -1,0 +1,55 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.enabled": true,
+    "editor.formatOnSave": false,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".vscode": true,
+        "**/*.pyc": true,
+    },
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=C0111",
+    ],
+    // "python.pythonPath": "/media/linux/projects/hopofy/venv/bin/",
+    "cSpell.words": [
+        "clion",
+        "deconstructible",
+        "dgroups",
+        "drun",
+        "goland",
+        "gruvbox",
+        "hexlify",
+        "hopofy",
+        "libqtile",
+        "Listbox",
+        "myusers",
+        "nemo",
+        "oninput",
+        "pactl",
+        "Popen",
+        "psycopg",
+        "qtile",
+        "rasi",
+        "rofi",
+        "toscreen",
+        "unsplit",
+        "urandom",
+        "windowcd",
+        "xcolor",
+        "xprop"
+    ],
+    "cSpell.ignoreRegExpList": [
+        "/[\\u0621-\\u064A]+/"
+    ],
+}
