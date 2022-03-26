@@ -347,14 +347,14 @@ my_bar = bar.Bar([
     #   الوسط
     # ----------
     # new_right_arrow(gruvbox['bg'], gruvbox['widget-bg']),
-    widget.Prompt(),
-    widget.WindowName(
-        # background=gruvbox['widget-bg'],
-        # foreground=gruvbox['widget-fg'],
-        # format='{name}',
-        parse_text="",
-    ),
-    widget.Spacer(length=7),
+    # widget.Prompt(),
+    # widget.WindowName(
+    #     # background=gruvbox['widget-bg'],
+    #     # foreground=gruvbox['widget-fg'],
+    #     # format='{name}',
+    #     parse_text="",
+    # ),
+    widget.Spacer(),
     # new_left_arrow(gruvbox['bg'], gruvbox['dark-yellow']),
 
 
@@ -409,7 +409,7 @@ my_bar = bar.Bar([
 ],
     background=gruvbox['bg'],
     size=20,
-    border_width=[4, 0, 4, 0],  # Draw top and bottom borders
+    border_width=[6, 0, 6, 0],  # Draw top and bottom borders
     border_color=[
         gruvbox["bg"],
         gruvbox["bg"],
