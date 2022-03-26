@@ -43,7 +43,7 @@ nord_fox = {
 
 gruvbox = {
     'dark-bg':      '#16181c',
-    'bg':           '#191928',
+    'bg':           '#161925',
     # 'bg':           '#00000000',
     'fg':           '#bd93f9',
     'dark-red':     '#cc241d',
@@ -56,7 +56,7 @@ gruvbox = {
     'light-yellow': '#e9d65f',
     'dark-blue':    '#458588',
     'blue':         '#83a598',
-    'lime':         '#5fc46e',
+    'lime':         '#43a047',
     'purple':       '#be78d6',
     'light-cyan':   '#09c3ef',
     'dark-magenta': '#b16286',
@@ -66,15 +66,15 @@ gruvbox = {
     'dark-gray':    '#3d3d3d',
     'gray':         '#666666',
 
-    'widget-bg':    '#abb2bf',
+    'widget-bg':    '#e3f2fd',
     'widget-fg':    '#262926',
 
-    'box_bg': "#16181c",
-    'box_fg': "#abb2bf",
-    'box_active': "#bd93f9",
-    'box_inactive': "#666666",
-    'block_highlight': "#09c3ef",
-    'box_highlight': "#262926",
+    'box_bg': "#e3f2fd",
+    'box_fg': "#262926",
+    'box_active': "#cc241d",
+    'box_inactive': "#424242",
+    'block_highlight': "#262926",
+    'box_highlight': "#bd93f9",
 
     'border_active':    '#09c3ef',
     'border_inactive':  '#b16286',

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-nitrogen --restore &
 nm-applet -sm-disable &
 blueman-applet &
 xrandr --output eDP-1 &

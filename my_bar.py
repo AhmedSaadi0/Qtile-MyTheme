@@ -105,12 +105,21 @@ my_bar = bar.Bar([
     #     #     )
     #     # },
     # ),
+    widget.Spacer(length=10),
+    widget.TextBox(
+        background=gruvbox['light-yellow'],
+        foreground=gruvbox['widget-fg'],
+        text='',
+        # padding=10,
+        # font="Font Awesome 5 Free Solid",
+        mouse_callbacks={'Button1': open_power_options, },
+    ),
     widget.TextBox(
         background=gruvbox['widget-bg'],
         foreground=gruvbox['widget-fg'],
-        text='',
-        padding=10,
-        font="Font Awesome 5 Free Solid",
+        text='خروج',
+        # padding=10,
+        # font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_power_options, },
     ),
 
@@ -121,7 +130,7 @@ my_bar = bar.Bar([
         background=gruvbox['bg'],
         padding=10
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
     # new_left_arrow(gruvbox['bg'], gruvbox['widget-bg']),
 
     # new_right_arrow(gruvbox['magenta'], gruvbox['bg']),
@@ -142,7 +151,7 @@ my_bar = bar.Bar([
         font="Font Awesome 5 Free Solid",
         margin=2
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # --------
     #   الرام
@@ -164,7 +173,7 @@ my_bar = bar.Bar([
         mouse_callbacks={'Button1': open_plasma_systemmonitor, },
         margin=2
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # ----------
     #   المعالج
@@ -188,7 +197,7 @@ my_bar = bar.Bar([
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_gnome_system_monitor, },
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # ----------
     #   NvidiaSensors
@@ -215,7 +224,7 @@ my_bar = bar.Bar([
         padding=10,
         font="Font Awesome 5 Free Solid",
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # ----------
     #   البطارية
@@ -240,7 +249,7 @@ my_bar = bar.Bar([
         # foreground=gruvbox['dark-magenta'],
         # format="{watt:.2f} W - {percent:2.0%} ",
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # ----------
     #   السطوع
@@ -264,7 +273,7 @@ my_bar = bar.Bar([
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_screens, },
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # ---------------
     #   مستوى الصوت
@@ -285,7 +294,7 @@ my_bar = bar.Bar([
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_audio_devices, },
     ),
-    widget.Spacer(length=10),
+    widget.Spacer(length=7),
 
     # ----------
     #   KeyboardLayout
@@ -315,15 +324,37 @@ my_bar = bar.Bar([
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_audio_devices, },
     ),
+    widget.Spacer(length=7),
+
+    # --------
+    #   النت
+    # --------
+    # widget.Wallpaper(
+    #     directory="/media/shared/Pictures/fav/",
+    #     background=gruvbox['widget-bg'],
+    #     foreground=gruvbox['widget-fg'],
+    #     font="Font Awesome 5 Free Solid",
+    # ),
+    # widget.TextBox(
+    #     background=gruvbox['yellow'],
+    #     foreground=gruvbox['widget-fg'],
+    #     text='',
+    #     padding=10,
+    #     font="Font Awesome 5 Free Solid",
+    #     mouse_callbacks={'Button1': open_audio_devices, },
+    # ),
     # ----------
     #   الوسط
     # ----------
     # new_right_arrow(gruvbox['bg'], gruvbox['widget-bg']),
     widget.Prompt(),
     widget.WindowName(
+        # background=gruvbox['widget-bg'],
+        # foreground=gruvbox['widget-fg'],
         # format='{name}',
-        parse_text=""
+        parse_text="",
     ),
+    widget.Spacer(length=7),
     # new_left_arrow(gruvbox['bg'], gruvbox['dark-yellow']),
 
 
@@ -344,20 +375,6 @@ my_bar = bar.Bar([
     #     # font="Font Awesome 5 Free Solid",
     # ),
 
-
-    widget.WindowCount(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
-        show_zero=True
-    ),
-    widget.CurrentLayoutIcon(
-        background=gruvbox["fg"],
-        foreground=gruvbox['widget-fg'],
-        scale=0.65,
-    ),
-
-    new_left_arrow(gruvbox['bg'], gruvbox['dark-bg']),
-
     widget.GroupBox(
         background=gruvbox['box_bg'],
         foreground=gruvbox["box_fg"],
@@ -366,19 +383,37 @@ my_bar = bar.Bar([
 
         block_highlight_text_color=gruvbox['block_highlight'],
         highlight_color=gruvbox['box_highlight'],
-        
+
         highlight_method='line',
         disable_drag=True,
-        borderwidth=1,
-        # padding=3,
+        borderwidth=2,
+        padding=4,
     ),
-    # widget.Spacer(
-    #     background=gruvbox['gray'],
-    #     padding=10
-    # ),
+
+    widget.Spacer(length=7),
+
+
+    widget.WindowCount(
+        background=gruvbox['widget-bg'],
+        foreground=gruvbox['widget-fg'],
+        show_zero=True
+    ),
+    widget.CurrentLayoutIcon(
+        background=gruvbox["lime"],
+        foreground=gruvbox['widget-fg'],
+        scale=0.65,
+    ),
+
+    widget.Spacer(length=7),
+
 ],
     background=gruvbox['bg'],
     size=20,
-    # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-    # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+    border_width=[4, 0, 4, 0],  # Draw top and bottom borders
+    border_color=[
+        gruvbox["bg"],
+        gruvbox["bg"],
+        gruvbox["bg"],
+        gruvbox["bg"]
+]  # Borders are magenta
 )

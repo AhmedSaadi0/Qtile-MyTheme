@@ -100,6 +100,8 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=my_bar,
+        # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
+        wallpaper="~/.config/qtile/splash.png",
     ),
 ]
 
