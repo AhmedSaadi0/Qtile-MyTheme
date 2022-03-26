@@ -133,6 +133,7 @@ button.selected {
     text-color:       @selected-normal-foreground;
 }
 inputbar {
+    text:"";
     spacing:    0;
     text-color: @normal-foreground;
     padding:    1px ;
@@ -164,15 +165,16 @@ inputbar {
     
 }
 textbox-prompt-colon {
-    expand:     false;
+    expand:     true;
+    content:    "التطبيقات قيد التشغيل";
     // str:        "";
-	padding:    0px 0px 0px 0px;
+	padding:    0px 0px 10px 0px;
     text-color: @normal-foreground;
-	font:		"Iosevka Nerd Font 10";
+	// font:		"Iosevka Nerd Font 10";
 }
 
 prompt {
-    enabled: 						true;
+    enabled: 						false;
     padding:                        0px 0px 10px -22px;
 	background-color: 				@background;
 	text-color: 					@foreground;
