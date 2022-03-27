@@ -11,7 +11,7 @@ from libqtile.lazy import lazy
 from layouts import workspaces
 from my_bar import my_bar
 from keys import keys, MOD as mod
-from colors import gruvbox
+from colors import style as color
 
 groups = []
 
@@ -43,8 +43,8 @@ for workspace in workspaces:
 
 layouts = [
     layout.MonadTall(
-        border_focus=gruvbox["border_active"],
-        border_normal=gruvbox['border_inactive'],
+        border_focus=color["border_active"],
+        border_normal=color['border_inactive'],
         border_on_single=True,
         border_width=1,
         margin=8,
@@ -52,8 +52,8 @@ layouts = [
         align=layout.MonadTall._right,
     ),
     layout.RatioTile(
-        border_focus=gruvbox["border_active"],
-        border_normal=gruvbox['border_inactive'],
+        border_focus=color["border_active"],
+        border_normal=color['border_inactive'],
         border_on_single=True,
         border_width=1,
         margin=4,
@@ -61,8 +61,8 @@ layouts = [
         fancy=True,
     ),
     layout.Floating(
-        border_focus=gruvbox["border_active"],
-        border_normal=gruvbox['border_inactive'],
+        border_focus=color["border_active"],
+        border_normal=color['border_inactive'],
         border_on_single=True,
         border_width=1,
     ),
@@ -101,7 +101,11 @@ screens = [
     Screen(
         top=my_bar,
         # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
-        wallpaper="~/.config/qtile/splash.png",
+        # wallpaper="~/.config/qtile/splash.png",
+        # wallpaper="/media/shared/Pictures/fav/new/dnord4k_dark.png",
+        wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
+        wallpaper_mode="fill",
+        # bottom=icons_bar
     ),
 ]
 

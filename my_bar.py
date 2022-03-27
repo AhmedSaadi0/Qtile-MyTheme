@@ -1,6 +1,7 @@
 from libqtile import bar, qtile, widget
 
-from colors import gruvbox
+from colors import style as theme
+from keys import ROFI_THEME
 
 
 def left_half_circle(fg_color):
@@ -78,7 +79,7 @@ def open_audio_devices():
 
 def open_power_options():
     qtile.cmd_spawn(
-        "rofi -show p -MODi p:~/.config/qtile/rofi/rofi-power-menu -theme power-menu-theme-right"
+        f"rofi -show p -MODi p:~/.config/qtile/{ROFI_THEME}/rofi-power-menu -theme ~/.config/qtile/rofi/power-menu-theme-right"
     )
 
 
@@ -91,61 +92,40 @@ def open_xfce4_power_manager_settings():
 
 
 my_bar = bar.Bar([
+    widget.Spacer(length=7),
+
     # --------------
     #   ايقاف التشغيل
     # --------------
-    # widget.TextBox(
-    #     background=gruvbox['bg'],
-    #     text=" خروج",
-    #     padding=10,
-    #     # font="Font Awesome 5 Free Solid",
-    #     # mouse_callbacks={
-    #     #     lazy.spawn(
-    #     #         "rofi -show p -modi p:/home/ahmed/.config/rofi/rofi-power-menu -theme power-menu-theme"
-    #     #     )
-    #     # },
-    # ),
-    widget.Spacer(length=10),
     widget.TextBox(
-        background=gruvbox['light-yellow'],
-        foreground=gruvbox['widget-fg'],
-        text='',
-        # padding=10,
-        # font="Font Awesome 5 Free Solid",
-        mouse_callbacks={'Button1': open_power_options, },
-    ),
-    widget.TextBox(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
         text='خروج',
         # padding=10,
         # font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_power_options, },
     ),
-
-    # --------------
-    #   برامج الخلفية
-    # --------------
-    widget.Systray(
-        background=gruvbox['bg'],
-        padding=10
+    widget.TextBox(
+        background=theme['cyan'],
+        foreground=theme['widget-fg'],
+        text='',
+        # padding=10,
+        # font="Font Awesome 5 Free Solid",
+        mouse_callbacks={'Button1': open_power_options, },
     ),
     widget.Spacer(length=7),
-    # new_left_arrow(gruvbox['bg'], gruvbox['widget-bg']),
-
-    # new_right_arrow(gruvbox['magenta'], gruvbox['bg']),
 
     # ----------
     #   الساعة
     # ----------
     widget.Clock(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
         format="%I:%M - %A %d (%B)",
     ),
     widget.TextBox(
-        background=gruvbox['light-yellow'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['light-yellow'],
+        foreground=theme['widget-fg'],
         text='',
         padding=10,
         font="Font Awesome 5 Free Solid",
@@ -153,12 +133,30 @@ my_bar = bar.Bar([
     ),
     widget.Spacer(length=7),
 
+    # --------------
+    #   برامج الخلفية
+    # --------------
+    widget.Systray(
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
+        padding=10
+    ),
+    widget.TextBox(
+        background=theme['red'],
+        foreground=theme['widget-fg'],
+        text='',
+        padding=7,
+        # font="Font Awesome 5 Free Solid",
+        # mouse_callbacks={'Button1': open_power_options, },
+    ),
+    widget.Spacer(length=7),
+
     # --------
     #   الرام
     # --------
     widget.Memory(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
         format="{MemPercent: .0f} %",
         font="Font Awesome 5 Free Solid",
         # plasma-systemmonitor
@@ -166,8 +164,8 @@ my_bar = bar.Bar([
     ),
     widget.TextBox(
         text='',
-        background=gruvbox['cyan'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['cyan'],
+        foreground=theme['widget-fg'],
         padding=10,
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_plasma_systemmonitor, },
@@ -179,10 +177,10 @@ my_bar = bar.Bar([
     #   المعالج
     # ----------
     widget.CPU(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
-        fill_color=gruvbox['widget-fg'],
-        graph_color=gruvbox['magenta'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
+        fill_color=theme['widget-fg'],
+        graph_color=theme['magenta'],
         format='{load_percent}%',
         font="Font Awesome 5 Free Solid",
         border_width=0,
@@ -190,8 +188,8 @@ my_bar = bar.Bar([
         mouse_callbacks={'Button1': open_gnome_system_monitor, },
     ),
     widget.TextBox(
-        background=gruvbox['dark-yellow'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['dark-yellow'],
+        foreground=theme['widget-fg'],
         text=' ',
         padding=10,
         font="Font Awesome 5 Free Solid",
@@ -203,10 +201,10 @@ my_bar = bar.Bar([
     #   NvidiaSensors
     # ----------
     widget.NvidiaSensors(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
         # configured_keyboards=['us','ar'],
-        # foreground=gruvbox['dark-magenta'],
+        # foreground=theme['dark-magenta'],
         # format="{percent:2.0%}",
         font="Font Awesome 5 Free Solid",
     ),
@@ -214,12 +212,12 @@ my_bar = bar.Bar([
     #   حرارة المعالج
     # -------------
     widget.ThermalSensor(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
     ),
     widget.TextBox(
-        background=gruvbox['orange'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['orange'],
+        foreground=theme['widget-fg'],
         text='',
         padding=10,
         font="Font Awesome 5 Free Solid",
@@ -230,9 +228,9 @@ my_bar = bar.Bar([
     #   البطارية
     # ----------
     widget.Battery(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
-        # foreground=gruvbox['dark-magenta'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
+        # foreground=theme['dark-magenta'],
         format="{percent:2.0%}",
         charge_char="",
         empty_char="",
@@ -242,11 +240,11 @@ my_bar = bar.Bar([
         mouse_callbacks={'Button1': open_xfce4_power_manager_settings, },
     ),
     widget.BatteryIcon(
-        background=gruvbox['dark-blue'],
+        background=theme['dark-blue'],
         mouse_callbacks={'Button1': open_xfce4_power_manager_settings, },
         # scale=1,
-        # theme_path="/home/ahmed/.config/qtile/battery-icons"
-        # foreground=gruvbox['dark-magenta'],
+        # color_path="/home/ahmed/.config/qtile/battery-icons"
+        # foreground=theme['dark-magenta'],
         # format="{watt:.2f} W - {percent:2.0%} ",
     ),
     widget.Spacer(length=7),
@@ -255,19 +253,19 @@ my_bar = bar.Bar([
     #   السطوع
     # ----------
     widget.Backlight(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
         backlight_name="intel_backlight",
         # brightness_file="/sys/class/backlight/intel_backlight",
         # max_brightness_file="/sys/class/backlight/intel_backlight",
-        # foreground=gruvbox['dark-magenta'],
+        # foreground=theme['dark-magenta'],
         format="{percent:2.0%}",
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_screens, },
     ),
     widget.TextBox(
-        background=gruvbox['lime'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['lime'],
+        foreground=theme['widget-fg'],
         text='',
         padding=10,
         font="Font Awesome 5 Free Solid",
@@ -279,16 +277,16 @@ my_bar = bar.Bar([
     #   مستوى الصوت
     # ---------------
     widget.Volume(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
-        # foreground=gruvbox['dark-magenta'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
+        # foreground=theme['dark-magenta'],
         # format="{percent:2.0%}",
         font="Font Awesome 5 Free Solid",
         mouse_callbacks={'Button1': open_audio_devices, },
     ),
     widget.TextBox(
-        background=gruvbox['light-cyan'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['light-cyan'],
+        foreground=theme['widget-fg'],
         text='',
         padding=10,
         font="Font Awesome 5 Free Solid",
@@ -300,9 +298,9 @@ my_bar = bar.Bar([
     #   KeyboardLayout
     # ----------
     # widget.KeyboardLayout(
-    #     background=gruvbox['yellow'],
+    #     background=theme['yellow'],
     #     configured_keyboards=['us', 'ar'],
-    #     # foreground=gruvbox['dark-magenta'],
+    #     # foreground=theme['dark-magenta'],
     #     # format="{percent:2.0%}",
     #     font="Font Awesome 5 Free Solid",
     # ),
@@ -311,14 +309,14 @@ my_bar = bar.Bar([
     #   النت
     # --------
     widget.Net(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
         format='{up}  {down} ',
         font="Font Awesome 5 Free Solid",
     ),
     widget.TextBox(
-        background=gruvbox['purple'],
-        foreground=gruvbox['widget-fg'],
+        background=theme['purple'],
+        foreground=theme['widget-fg'],
         text='',
         padding=10,
         font="Font Awesome 5 Free Solid",
@@ -327,17 +325,17 @@ my_bar = bar.Bar([
     widget.Spacer(length=7),
 
     # --------
-    #   النت
+    #   الخلفيات
     # --------
     # widget.Wallpaper(
     #     directory="/media/shared/Pictures/fav/",
-    #     background=gruvbox['widget-bg'],
-    #     foreground=gruvbox['widget-fg'],
+    #     background=theme['widget-bg'],
+    #     foreground=theme['widget-fg'],
     #     font="Font Awesome 5 Free Solid",
     # ),
     # widget.TextBox(
-    #     background=gruvbox['yellow'],
-    #     foreground=gruvbox['widget-fg'],
+    #     background=theme['yellow'],
+    #     foreground=theme['widget-fg'],
     #     text='',
     #     padding=10,
     #     font="Font Awesome 5 Free Solid",
@@ -346,74 +344,75 @@ my_bar = bar.Bar([
     # ----------
     #   الوسط
     # ----------
-    # new_right_arrow(gruvbox['bg'], gruvbox['widget-bg']),
+    # new_right_arrow(theme['bg'], theme['widget-bg']),
     # widget.Prompt(),
     # widget.WindowName(
-    #     # background=gruvbox['widget-bg'],
-    #     # foreground=gruvbox['widget-fg'],
+    #     # background=theme['widget-bg'],
+    #     # foreground=theme['widget-fg'],
     #     # format='{name}',
     #     parse_text="",
     # ),
     widget.Spacer(),
-    # new_left_arrow(gruvbox['bg'], gruvbox['dark-yellow']),
-
+    # new_left_arrow(theme['bg'], theme['dark-yellow']),
 
     # -------------
     #   TaskList
     # -------------
     # widget.TaskList(
-    #     # background=gruvbox['widget-bg'],
-    #     # foreground=gruvbox['widget-fg'],
+    #     # background=theme['widget-bg'],
+    #     # foreground=theme['widget-fg'],
     #     padding=8,
     #     borderwidth=1,
     #     # margin=3,
     #     # max_title_width=0,
     #     fontsize=0,
     #     icon_size=6,
-    #     # unfocused_border=gruvbox['magenta']
+    #     # unfocused_border=theme['magenta']
     #     # format="{percent:2.0%}",
     #     # font="Font Awesome 5 Free Solid",
     # ),
 
     widget.GroupBox(
-        background=gruvbox['box_bg'],
-        foreground=gruvbox["box_fg"],
-        active=gruvbox["box_active"],
-        inactive=gruvbox["box_inactive"],
+        background=theme['widget-bg'],
+        foreground=theme["widget-bg"],
+        active=theme["widget-fg"],
+        inactive=theme["box_inactive"],
 
-        block_highlight_text_color=gruvbox['block_highlight'],
-        highlight_color=gruvbox['box_highlight'],
+        # لون نص الصفحة المحددة
+        block_highlight_text_color=theme['block_highlight'],
+        # لون المحدد
+        highlight_color=theme['box_highlight'],
 
         highlight_method='line',
         disable_drag=True,
-        borderwidth=2,
+        borderwidth=3,
         padding=4,
     ),
 
     widget.Spacer(length=7),
 
-
     widget.WindowCount(
-        background=gruvbox['widget-bg'],
-        foreground=gruvbox['widget-fg'],
-        show_zero=True
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
+        show_zero=True,
     ),
     widget.CurrentLayoutIcon(
-        background=gruvbox["lime"],
-        foreground=gruvbox['widget-fg'],
+        background=theme["lime"],
+        foreground=theme['widget-fg'],
         scale=0.65,
+        padding=3,
     ),
 
     widget.Spacer(length=7),
 
 ],
-    background=gruvbox['bg'],
-    size=20,
+    background=theme['bg'],
+    size=22,
     border_width=[6, 0, 6, 0],  # Draw top and bottom borders
     border_color=[
-        gruvbox["bg"],
-        gruvbox["bg"],
-        gruvbox["bg"],
-        gruvbox["bg"]
+        theme["bg"],
+        theme["bg"],
+        theme["bg"],
+        theme["bg"]
 ]  # Borders are magenta
 )

@@ -1,21 +1,28 @@
+/************************************************
+ * ROFI Color theme
+ * User: leofa
+ * Copyright: 2017 leofa
+ ***********************************************/
+
 configuration
 {
 	display-drun:					"Activate";
-	// display-run:					"Execute";
+	display-run:					"Execute";
 	show-icons:						true;
     icon-theme: 					"Papirus";
-    drun-display-format:            "{name}\n{description}";
+    drun-display-format:            "{name}";
     
 }
-
+// #4badba
+// #161925
 *
 {
 	font:							"JF Flat 11";
-	foreground:						#f8f8f2ff;
-	background:						#161925;
+	foreground:						#f8f8f2ff; 
+	background:						#2e3440;
 	foreground-alt:					#f8f8f255;
 	background-alt:					#282a3655;
-	active-background:				#bd93f9;
+	active-background:				#4badba;
 	urgent-background:				#ff2222aa;
     
 	selected-background:			@active-background;

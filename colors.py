@@ -1,56 +1,14 @@
-nord_fox = {
-    'bg': "#2e3440",
-    'fg': "#b9bfca",
-    'fg_gutter': "#4b5668",
-    'black': "#3b4252",
-    'red': "#bf616a",
-    'green': "#a3be8c",
-    'yellow': "#ebcb8b",
-    'blue': "#81a1c1",
-    'magenta': "#b48ead",
-    'cyan': "#88c0d0",
-    'white': "#e5e9f0",
-    'orange': "#c9826b",
-    'pink': "#bf88bc",
-}
-
-# gruvbox = {
-#     'bg':           '#282828',
-#     'fg':           '#d4be98',
-#     'dark-red':     '#ea6962',
-#     'red':          '#ea6962',
-#     'dark-green':   '#a9b665',
-#     'green':        '#a9b665',
-#     'dark-yellow':  '#e78a4e',
-#     'yellow':       '#d8a657',
-#     'dark-blue':    '#7daea3',
-#     'blue':         '#7daea3',
-#     'dark-magenta': '#d3869b',
-#     'magenta':      '#d3869b',
-#     'dark-cyan':    '#89b482',
-#     'cyan':         '#89b482',
-#     'dark-gray':    '#665c54',
-#     'gray':         '#928374',
-
-#     'fg4':          '#766f64',
-#     'fg3':          '#665c54',
-#     'fg2':          '#504945',
-#     'fg1':          '#3c3836',
-#     'bg0':          '#32302f',
-#     'fg0':          '#1d2021',
-#     'fg9':          '#ebdbb2'
-# }
-
-gruvbox = {
-    'dark-bg':      '#16181c',
-    'bg':           '#191928',
+dracula = {
+    'dark-bg':      '#161925',
     # 'bg':           '#00000000',
+    'bg':           '#232634',
     'fg':           '#bd93f9',
     'dark-red':     '#cc241d',
     'red':          '#fb4934',
     'orange':       '#e67b46',
     'dark-green':   '#98971a',
     'green':        '#b8bb26',
+    'good_green':   '#00b19f',
     'dark-yellow':  '#d79921',
     'yellow':       '#fabd2f',
     'light-yellow': '#e9d65f',
@@ -66,17 +24,55 @@ gruvbox = {
     'dark-gray':    '#3d3d3d',
     'gray':         '#666666',
 
-    'widget-bg':    '#e3f2fd',
-    'widget-fg':    '#262926',
+    'widget-bg':    '#eceff4',
+    'widget-fg':    '#4c566a',
 
     'box_bg': "#e3f2fd",
     'box_fg': "#262926",
-    'box_active': "#cc241d",
-    'box_inactive': "#424242",
+    'box_active': "#9e9e9e",
+    'box_inactive': "#3b4252",
     'block_highlight': "#262926",
-    'box_highlight': "#ffa726",
+    'box_highlight': "#9e9e9e",
 
     'border_active':    '#bd93f9',
     'border_inactive':  '#689d6a',
-
 }
+
+nord = {
+    'bg': "#2e3440",
+    'fg': "#b9bfca",
+    'fg_gutter': "#4b5668",
+    'black': "#3b4252",
+    'red': "#bf616a",
+    'green': "#a3be8c",
+    'yellow': "#ebcb8b",
+    'blue': "#81a1c1",
+    'magenta': "#b48ead",
+    'cyan': "#88c0d0",
+    'white': "#e5e9f0",
+    'orange': "#c9826b",
+    'pink': "#bf88bc",
+
+    'light-yellow': '#e9d65f',
+    'dark-yellow':  '#d79921',
+    'lime':         '#43a047',
+    'purple':       '#be78d6',
+    'dark-blue':    '#458588',
+    'light-cyan':   '#09c3ef',
+
+    'widget-bg':    '#4c566a',
+    'widget-fg':    '#eceff4',
+
+    'box_bg': "#e3f2fd",
+    'box_fg': "#262926",
+    'box_active': "#eceff4",
+    'box_inactive': "#2e3440",
+    'block_highlight': "#262926",
+    'box_highlight': "#9e9e9e",
+
+    'border_active':    '#4badba',
+    'border_inactive':  '#e1b86f',
+}
+
+
+style = nord
