@@ -44,7 +44,7 @@ window {
     height:           271;
     width:            320;
     location:		  north west;
-    y-offset:         31;
+    y-offset:         42;
     x-offset:         9;
     font: "JF Flat 14";
 }

@@ -100,10 +100,11 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=my_bar,
-        # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
         # wallpaper="~/.config/qtile/splash.png",
+        wallpaper="~/.config/qtile/nord.png",
+        # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
         # wallpaper="/media/shared/Pictures/fav/new/dnord4k_dark.png",
-        wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
+        # wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
         wallpaper_mode="fill",
         # bottom=icons_bar
     ),

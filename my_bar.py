@@ -115,24 +115,6 @@ my_bar = bar.Bar([
     ),
     widget.Spacer(length=7),
 
-    # ----------
-    #   الساعة
-    # ----------
-    widget.Clock(
-        background=theme['widget-bg'],
-        foreground=theme['widget-fg'],
-        format="%I:%M - %A %d (%B)",
-    ),
-    widget.TextBox(
-        background=theme['light-yellow'],
-        foreground=theme['widget-fg'],
-        text='',
-        padding=10,
-        font="Font Awesome 5 Free Solid",
-        margin=2
-    ),
-    widget.Spacer(length=7),
-
     # --------------
     #   برامج الخلفية
     # --------------
@@ -141,14 +123,14 @@ my_bar = bar.Bar([
         foreground=theme['widget-fg'],
         padding=10
     ),
-    widget.TextBox(
-        background=theme['red'],
-        foreground=theme['widget-fg'],
-        text='',
-        padding=7,
-        # font="Font Awesome 5 Free Solid",
-        # mouse_callbacks={'Button1': open_power_options, },
-    ),
+    # widget.TextBox(
+    #     background=theme['red'],
+    #     foreground=theme['widget-fg'],
+    #     text='',
+    #     padding=7,
+    #     # font="Font Awesome 5 Free Solid",
+    #     # mouse_callbacks={'Button1': open_power_options, },
+    # ),
     widget.Spacer(length=7),
 
     # --------
@@ -200,14 +182,14 @@ my_bar = bar.Bar([
     # ----------
     #   NvidiaSensors
     # ----------
-    widget.NvidiaSensors(
-        background=theme['widget-bg'],
-        foreground=theme['widget-fg'],
-        # configured_keyboards=['us','ar'],
-        # foreground=theme['dark-magenta'],
-        # format="{percent:2.0%}",
-        font="Font Awesome 5 Free Solid",
-    ),
+    # widget.NvidiaSensors(
+    #     background=theme['widget-bg'],
+    #     foreground=theme['widget-fg'],
+    #     # configured_keyboards=['us','ar'],
+    #     # foreground=theme['dark-magenta'],
+    #     # format="{percent:2.0%}",
+    #     font="Font Awesome 5 Free Solid",
+    # ),
     # -------------
     #   حرارة المعالج
     # -------------
@@ -304,7 +286,25 @@ my_bar = bar.Bar([
     #     # format="{percent:2.0%}",
     #     font="Font Awesome 5 Free Solid",
     # ),
+    widget.Spacer(),
 
+    # ----------
+    #   الساعة
+    # ----------
+    widget.Clock(
+        background=theme['widget-bg'],
+        foreground=theme['widget-fg'],
+        format="%I:%M - %A %d (%B)",
+    ),
+    widget.TextBox(
+        background=theme['light-yellow'],
+        foreground=theme['widget-bg'],
+        text='',
+        padding=10,
+        font="Font Awesome 5 Free Solid",
+        margin=2
+    ),
+    widget.Spacer(),
     # --------
     #   النت
     # --------
@@ -352,7 +352,6 @@ my_bar = bar.Bar([
     #     # format='{name}',
     #     parse_text="",
     # ),
-    widget.Spacer(),
     # new_left_arrow(theme['bg'], theme['dark-yellow']),
 
     # -------------

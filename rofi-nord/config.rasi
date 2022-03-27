@@ -7,7 +7,7 @@
 configuration
 {
 	display-drun:					"Activate";
-	display-run:					"Execute";
+	// display-run:					"Execute";
 	show-icons:						true;
     icon-theme: 					"Papirus";
     drun-display-format:            "{name}";
@@ -18,10 +18,10 @@ configuration
 *
 {
 	font:							"JF Flat 11";
-	foreground:						#f8f8f2ff; 
-	background:						#2e3440;
-	foreground-alt:					#f8f8f255;
-	background-alt:					#282a3655;
+	foreground:						#f8f8f2; 
+	background:						#3b4252;
+	foreground-alt:					#4badba55;
+	background-alt:					#2e344055;
 	active-background:				#4badba;
 	urgent-background:				#ff2222aa;
     
