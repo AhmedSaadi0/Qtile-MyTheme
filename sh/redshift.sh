@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ ! -z $(pgrep redshift) ];
+then
+    redshift -x && pkill redshift && killall redshift
+else
+    redshift -l 0:0 -t 4500:4500 -r &>/dev/null &
+fi

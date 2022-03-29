@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 
 # from keys import mod as mod
 from layouts import workspaces
-from my_bar import my_bar
+from my_bar import my_bar, screen2_bar
 from keys import keys, MOD as mod
 from colors import style as color
 
@@ -66,6 +66,7 @@ layouts = [
         border_on_single=True,
         border_width=1,
     ),
+    # #0000ff
     # layout.Columns(
     #     border_focus="#e6bd7c",
     #     border_normal="#2c2f36",
@@ -99,15 +100,30 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+        wallpaper_mode="fill",
         top=my_bar,
+        # bottom=task_bar,
+        # bottom=task_bar,
+        # wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
         # wallpaper="~/.config/qtile/splash.png",
-        wallpaper="~/.config/qtile/nord.png",
+        # wallpaper="~/.config/qtile/nord.png",
         # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
         # wallpaper="/media/shared/Pictures/fav/new/dnord4k_dark.png",
-        # wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
-        wallpaper_mode="fill",
-        # bottom=icons_bar
+        wallpaper="/media/shared/Pictures/fav/sourav-ghosh-gTvhFsQMqnA-unsplash.jpg",
     ),
+    Screen(
+        wallpaper_mode="fill",
+        top=screen2_bar,
+        # bottom=task_bar,
+        # bottom=task_bar,
+        # wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
+        # wallpaper="~/.config/qtile/splash.png",
+        # wallpaper="~/.config/qtile/nord.png",
+        # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
+        wallpaper="/media/shared/Pictures/fav/new/dnord4k_dark.png",
+        # wallpaper="/media/shared/Pictures/fav/sourav-ghosh-gTvhFsQMqnA-unsplash.jpg",
+    ),
+    
 ]
 
 # Drag floating layouts.
@@ -157,5 +173,5 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser('~/.config/qtile/sh/autostart.sh')
     subprocess.run([home])

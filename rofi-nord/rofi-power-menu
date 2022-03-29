@@ -31,7 +31,7 @@ declare -A icons
 icons[lockscreen]=""
 icons[switchuser]=""
 icons[logout]=""
-icons[suspend]=""
+icons[suspend]=""
 icons[hibernate]=""
 icons[reboot]=""
 icons[shutdown]=""

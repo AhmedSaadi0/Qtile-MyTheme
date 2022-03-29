@@ -38,7 +38,7 @@ app_keys = [
     Key(
         [MOD, "shift"],
         "a",
-        lazy.spawn("studio"),
+        lazy.spawn("prime-run studio"),
         desc="تشغيل اندرويد استودسو"
     ),
     Key(
@@ -86,16 +86,12 @@ sys_keys = [
         [],
         "XF86AudioRaiseVolume",
         lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
-        lazy.spawn(
-            "notify-send 'مستوى الصوت : '(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }')"),
         desc="رفع مستوى الصوت"
     ),
     Key(
         [],
         "XF86AudioLowerVolume",
         lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
-        lazy.spawn(
-            "notify-send 'مستوى الصوت : '(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }')"),
         desc="خفض مستوى الصوت"
     ),
     Key(
@@ -237,12 +233,16 @@ window_keys = [
         lazy.window.toggle_fullscreen(),
         desc='التبديل بين وضع ملء الشاشة'
     ),
-    Key(
-        [MOD],
-        "n",
-        lazy.window.cmd_toggle_minimize(),
-        desc=''
-    ),
+    Key([MOD, "shift"], "space",
+        lazy.layout.toggle_split(),
+        desc='Toggle between split and unsplit sides of stack'
+        ),
+    # Key(
+    #     [MOD],
+    #     "n",
+    #     lazy.window.cmd_toggle_minimize(),
+    #     desc=''
+    # ),
 ]
 
 

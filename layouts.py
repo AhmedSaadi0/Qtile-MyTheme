@@ -31,6 +31,7 @@ workspaces = [
         "layout": "monadtall",
         "matches": [
             Match(wm_class="code"),
+            Match(wm_class="jetbrains-pycharm-ce"),
             Match(wm_class="Code"),
         ],
         "spawn": ["google-chrome-stable"],
@@ -57,6 +58,7 @@ workspaces = [
             Match(wm_class="jetbrains-pycharm"),
             Match(wm_class="jetbrains-clion"),
             Match(wm_class="jetbrains-goland"),
+            Match(wm_class="jetbrains-studio"),
         ],
         "spawn": [],
     },

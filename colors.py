@@ -68,7 +68,7 @@ nord = {
     'box_active': "#eceff4",
     'box_inactive': "#2e3440",
     'block_highlight': "#262926",
-    'box_highlight': "#9e9e9e",
+    'box_highlight': "#bf616a",
 
     'border_active':    '#4badba',
     'border_inactive':  '#e1b86f',
