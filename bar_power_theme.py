@@ -260,7 +260,7 @@ screen1_bar = bar.Bar(
     ],
     background=theme['bg'],
     size=22,
-    # border_width=[3, 3, 3, 3],  # Draw top and bottom borders
+    border_width=[3, 3, 3, 3],  # Draw top and bottom borders
     border_color=[
         theme["bg"],
         theme["bg"],
@@ -445,7 +445,7 @@ screen2_bar = bar.Bar(
     ],
     background=theme['bg'],
     size=22,
-    # border_width=[3, 3, 3, 3],  # Draw top and bottom borders
+    border_width=[3, 3, 3, 3],  # Draw top and bottom borders
     border_color=[
         theme["bg"],
         theme["bg"],
