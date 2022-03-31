@@ -117,7 +117,6 @@ screens = [
         top=screen2_bar,
         # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/wild.png",
         wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/houses.jpg",
-
     ),
 
 ]
@@ -175,3 +174,10 @@ wmname = "LG3D"
 def autostart():
     home = os.path.expanduser('~/.config/qtile/sh/autostart.sh')
     subprocess.run([home])
+
+
+@hook.subscribe.startup_complete
+def set_screens():
+    home = os.path.expanduser('~/.config/qtile/sh/set-screens.sh')
+    subprocess.run([home])
+

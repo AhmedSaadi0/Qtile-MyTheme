@@ -43,7 +43,7 @@ screen1_bar = bar.Bar(
             bg_color=theme['p1'],
             fg_color=theme['p2'],
         ),
-        
+
         # --------------
         #   برامج الخلفية
         # --------------
@@ -268,7 +268,6 @@ screen1_bar = bar.Bar(
         theme["bg"]
     ]  # Borders are magenta
 )
-
 
 screen2_bar = bar.Bar(
     [
