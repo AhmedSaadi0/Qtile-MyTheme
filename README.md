@@ -1,3 +1,15 @@
+# Color-Theme
+<p align='center'>
+	<img alt='Color 1' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220331_170310.png'/>
+</p>
+<p align='center'>
+	<img alt='Color 3' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220331_000109.png'/>
+</p>
+<p align='center'>
+	<img alt='Color 2' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220331_170134.png'/>
+</p>
+
+
 # Nord-Theme
 <p align='center'>
 	<img alt='Nord 1' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/nord-1.png'/>
