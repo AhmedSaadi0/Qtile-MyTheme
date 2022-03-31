@@ -1,5 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
+# from libqtile import qtile
 
 TERMINATE = "konsole"
 MUSIC_PLAYER = "clementine"
@@ -8,7 +9,8 @@ FILE_MANAGER = "dolphin"
 MOD = "mod4"
 ALT = "mod1"
 
-ROFI_THEME = 'rofi-nord'
+ROFI_THEME = 'rofi-colors'
+
 
 app_keys = [
     Key(
@@ -85,7 +87,8 @@ sys_keys = [
     Key(
         [],
         "XF86AudioRaiseVolume",
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
+        lazy.spawn("amixer -q sset Master 1%+"),
+        lazy.spawn("notify-send 'مستوى الصوت' -h string:synchronous:volume -h int:value:$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }') -h string:x-canonical-private-synchronous:script"),
         desc="رفع مستوى الصوت"
     ),
     Key(
@@ -210,6 +213,18 @@ helper_keys = [
         lazy.restart(),
         desc="اعادة تشغيل qtile"
     ),
+    Key(
+        [MOD, ALT],
+        "Right",
+        lazy.to_screen(0),
+        desc="اعادة تشغيل qtile"
+    ),
+    Key(
+        [MOD, ALT],
+        "Left",
+        lazy.to_screen(1),
+        desc="اعادة تشغيل qtile"
+    ),
 
 
 ]
@@ -233,16 +248,18 @@ window_keys = [
         lazy.window.toggle_fullscreen(),
         desc='التبديل بين وضع ملء الشاشة'
     ),
-    Key([MOD, "shift"], "space",
-        lazy.layout.toggle_split(),
-        desc='Toggle between split and unsplit sides of stack'
-        ),
-    # Key(
-    #     [MOD],
-    #     "n",
-    #     lazy.window.cmd_toggle_minimize(),
-    #     desc=''
-    # ),
+    Key(
+        [MOD, ALT],
+        "f",
+        lazy.window.bring_to_front(),
+        desc='التبديل بين وضع ملء الشاشة'
+    ),
+    Key(
+        [MOD],
+        "n",
+        lazy.window.toggle_minimize(),
+        desc=''
+    ),
 ]
 
 

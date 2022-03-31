@@ -1,59 +1,66 @@
 from libqtile import bar, widget
 
-from colors import style as theme
+from colors import c1_gradients as theme
 from functions import (open_audio_devices, open_gnome_system_monitor,
                        open_plasma_systemmonitor, open_power_options,
                        open_xfce4_power_manager_settings, toggle_redshift)
 
 
-my_bar = bar.Bar(
+def lower_left_triangle(bg_color, fg_color):
+    return widget.TextBox(
+        text='\u25e2',
+        padding=-3,
+        fontsize=65,
+        font="Font Awesome 5 Free Solid",
+        background=bg_color,
+        foreground=fg_color,
+    )
+
+
+screen1_bar = bar.Bar(
     [
-        widget.Spacer(length=7),
+        widget.Spacer(
+            length=10,
+            background=theme['p1'],
+        ),
 
         # --------------
         #   ايقاف التشغيل
         # --------------
+        # lower_left_triangle(
+        #     bg_color=theme['p1'],
+        #     fg_color=theme['p1'],
+        # ),
         widget.TextBox(
-            background=theme['widget-bg'],
-            foreground=theme['widget-fg'],
-            text='خروج',
-            # padding=10,
-            # font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_power_options, },
-        ),
-        widget.TextBox(
-            background=theme['red'],
+            background=theme['p1'],
             foreground=theme['widget-fg'],
             text='',
             # padding=10,
             # font="Font Awesome 5 Free Solid",
             mouse_callbacks={'Button1': open_power_options, },
         ),
-        widget.Spacer(length=7),
-
+        lower_left_triangle(
+            bg_color=theme['p1'],
+            fg_color=theme['p2'],
+        ),
+        
         # --------------
         #   برامج الخلفية
         # --------------
         widget.Systray(
-            background=theme['widget-bg'],
+            background=theme['p2'],
             foreground=theme['widget-fg'],
             padding=10
         ),
-        widget.TextBox(
-            background=theme['purple'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=7,
-            # font="Font Awesome 5 Free Solid",
-            # mouse_callbacks={'Button1': open_power_options, },
+        lower_left_triangle(
+            bg_color=theme['p2'],
+            fg_color=theme['p3'],
         ),
-        widget.Spacer(length=7),
-
         # ----------
         #   البطارية
         # ----------
         widget.Battery(
-            background=theme['widget-bg'],
+            background=theme['p3'],
             foreground=theme['widget-fg'],
             # foreground=theme['dark-magenta'],
             format="{percent:2.0%}",
@@ -66,7 +73,7 @@ my_bar = bar.Bar(
                 'Button1': open_xfce4_power_manager_settings, },
         ),
         widget.BatteryIcon(
-            background=theme['cyan'],
+            background=theme['p3'],
             mouse_callbacks={
                 'Button1': open_xfce4_power_manager_settings, },
             # scale=1,
@@ -74,91 +81,85 @@ my_bar = bar.Bar(
             # foreground=theme['dark-magenta'],
             # format="{watt:.2f} W - {percent:2.0%} ",
         ),
-        widget.Spacer(length=7),
+        lower_left_triangle(
+            bg_color=theme['p3'],
+            fg_color=theme['p4'],
+        ),
 
         # ----------
         #   السطوع
         # ----------
         widget.Backlight(
-            background=theme['widget-bg'],
+            background=theme['p4'],
             foreground=theme['widget-fg'],
             backlight_name="intel_backlight",
             # brightness_file="/sys/class/backlight/intel_backlight",
             # max_brightness_file="/sys/class/backlight/intel_backlight",
             # foreground=theme['dark-magenta'],
-            format="{percent:2.0%}",
+            format="{percent:2.0%} ",
             font="Font Awesome 5 Free Solid",
             mouse_callbacks={'Button1': toggle_redshift, },
         ),
-        widget.TextBox(
-            background=theme['lime'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': toggle_redshift, },
+        lower_left_triangle(
+            bg_color=theme['p4'],
+            fg_color=theme['p5-d'],
         ),
-        widget.Spacer(length=7),
-
         # ---------------
         #   مستوى الصوت
         # ---------------
+        # widget.Volume(
+        #     background=theme['p5-d'],
+        #     foreground=theme['widget-fg'],
+        #     # foreground=theme['dark-magenta'],
+        #     format=" {percent:2.0%}",
+        #     font="Font Awesome 5 Free Solid",
+        #     mouse_callbacks={'Button1': open_audio_devices, },
+        # ),
         widget.Volume(
-            background=theme['widget-bg'],
+            background=theme['p5-d'],
             foreground=theme['widget-fg'],
             # foreground=theme['dark-magenta'],
-            # format="{percent:2.0%}",
+            # format=" {percent:2.0%}",
+            fmt='{} ',
+            # emoji=True,
             font="Font Awesome 5 Free Solid",
             mouse_callbacks={'Button1': open_audio_devices, },
         ),
-        widget.TextBox(
-            background=theme['light-cyan'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_audio_devices, },
+        lower_left_triangle(
+            bg_color=theme['p5-d'],
+            fg_color=theme['p5-l'],
         ),
-        widget.Spacer(length=7),
 
         # --------
         #   النت
         # --------
         widget.Net(
-            background=theme['widget-bg'],
-            foreground=theme['widget-fg'],
+            background=theme['p5-l'],
+            foreground=theme['widget-bg'],
             format='{up}  {down} ',
             font="Font Awesome 5 Free Solid",
         ),
-        widget.TextBox(
-            background=theme['purple'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_audio_devices, },
+        lower_left_triangle(
+            bg_color=theme['p5-l'],
+            fg_color=theme['bg'],
         ),
-        widget.Spacer(length=7),
 
         # ------------------------------------------------
         # ------------------ بداية الوسط -------------------
         # ------------------------------------------------
         widget.Spacer(),
-        # ----------
-        #   الساعة
-        # ----------
+        lower_left_triangle(
+            bg_color=theme['bg'],
+            fg_color=theme['p7'],
+        ),
         widget.Clock(
-            background=theme['widget-bg'],
-            foreground=theme['widget-fg'],
+            background=theme['p7'],
+            foreground=theme['widget-bg'],
             format="(%I:%M) - %A, %d %B",
         ),
-        widget.TextBox(
-            background=theme['light-yellow'],
-            foreground=theme['widget-bg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            margin=2
+        lower_left_triangle(
+            bg_color=theme['p7'],
+            fg_color=theme['bg'],
         ),
         widget.Spacer(),
         # ------------------------------------------------
@@ -168,47 +169,41 @@ my_bar = bar.Bar(
         # -------------
         #   حرارة المعالج
         # -------------
+        lower_left_triangle(
+            bg_color=theme['bg'],
+            fg_color=theme['p6'],
+        ),
         widget.ThermalSensor(
-            background=theme['widget-bg'],
+            background=theme['p6'],
             foreground=theme['widget-fg'],
+            # format="{thermal:2.0%} - "
         ),
-        widget.TextBox(
-            background=theme['orange'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
+        lower_left_triangle(
+            bg_color=theme['p6'],
+            fg_color=theme['p5'],
         ),
-        widget.Spacer(length=7),
-
 
         # --------
         #   الرام
         # --------
         widget.Memory(
-            background=theme['widget-bg'],
+            background=theme['p5'],
             foreground=theme['widget-fg'],
-            format="{MemPercent: .0f} %",
+            format="{MemPercent: .0f}% ",
             font="Font Awesome 5 Free Solid",
             # plasma-systemmonitor
             mouse_callbacks={'Button1': open_plasma_systemmonitor, },
         ),
-        widget.TextBox(
-            text='',
-            background=theme['dark-blue'],
-            foreground=theme['widget-fg'],
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_plasma_systemmonitor, },
-            margin=2
+        lower_left_triangle(
+            bg_color=theme['p5'],
+            fg_color=theme['p8'],
         ),
-        widget.Spacer(length=7),
 
         # ----------
         #   المعالج
         # ----------
         widget.CPUGraph(
-            background=theme['widget-bg'],
+            background=theme['p8'],
             foreground=theme['widget-fg'],
             fill_color=theme['widget-fg'],
             graph_color=theme['magenta'],
@@ -218,19 +213,14 @@ my_bar = bar.Bar(
             line_width=0,
             mouse_callbacks={'Button1': open_gnome_system_monitor, },
         ),
-        widget.TextBox(
-            background=theme['dark-yellow'],
-            foreground=theme['widget-bg'],
-            text=' ',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_gnome_system_monitor, },
+        lower_left_triangle(
+            bg_color=theme['p8'],
+            fg_color=theme['box_bg'],
         ),
-        widget.Spacer(length=7),
 
         widget.GroupBox(
-            background=theme['widget-bg'],
-            foreground=theme["widget-bg"],
+            background=theme['box_bg'],
+            foreground=theme["box_fg"],
             active=theme["widget-fg"],
             inactive=theme["box_inactive"],
 
@@ -245,13 +235,21 @@ my_bar = bar.Bar(
             padding=4,
         ),
 
-        widget.Spacer(length=7),
+        lower_left_triangle(
+            bg_color=theme['box_bg'],
+            fg_color=theme['lime'],
+        ),
 
         widget.WindowCount(
-            background=theme['widget-bg'],
+            background=theme['lime'],
             foreground=theme['widget-fg'],
             show_zero=True,
         ),
+        # widget.CurrentLayout(
+        #     background=theme['lime'],
+        #     foreground=theme['widget-fg'],
+        #     show_zero=True,
+        # ),
         widget.CurrentLayoutIcon(
             background=theme["lime"],
             foreground=theme['widget-fg'],
@@ -259,12 +257,10 @@ my_bar = bar.Bar(
             padding=3,
         ),
 
-        widget.Spacer(length=7),
-
     ],
     background=theme['bg'],
     size=22,
-    border_width=[7, 0, 7, 0],  # Draw top and bottom borders
+    # border_width=[3, 3, 3, 3],  # Draw top and bottom borders
     border_color=[
         theme["bg"],
         theme["bg"],
@@ -273,15 +269,19 @@ my_bar = bar.Bar(
     ]  # Borders are magenta
 )
 
+
 screen2_bar = bar.Bar(
     [
-        widget.Spacer(length=7),
+        widget.Spacer(
+            length=10,
+            background=theme['p1'],
+        ),
 
         # ----------
         #   البطارية
         # ----------
         widget.Battery(
-            background=theme['widget-bg'],
+            background=theme['p1'],
             foreground=theme['widget-fg'],
             # foreground=theme['dark-magenta'],
             format="{percent:2.0%}",
@@ -290,94 +290,79 @@ screen2_bar = bar.Bar(
             full_char="",
             font="Font Awesome 5 Free Solid",
             notify_below=25,
-            mouse_callbacks={'Button1': open_xfce4_power_manager_settings, },
+            mouse_callbacks={
+                'Button1': open_xfce4_power_manager_settings, },
         ),
         widget.BatteryIcon(
-            background=theme['cyan'],
-            mouse_callbacks={'Button1': open_xfce4_power_manager_settings, },
+            background=theme['p1'],
+            mouse_callbacks={
+                'Button1': open_xfce4_power_manager_settings, },
             # scale=1,
             # color_path="/home/ahmed/.config/qtile/battery-icons"
             # foreground=theme['dark-magenta'],
             # format="{watt:.2f} W - {percent:2.0%} ",
         ),
-        widget.Spacer(length=7),
-
+        lower_left_triangle(
+            bg_color=theme['p1'],
+            fg_color=theme['p4'],
+        ),
 
         # ---------------
         #   مستوى الصوت
         # ---------------
-        widget.Volume(
-            background=theme['widget-bg'],
+        # widget.Volume(
+        #     background=theme['p5-d'],
+        #     foreground=theme['widget-fg'],
+        #     # foreground=theme['dark-magenta'],
+        #     format=" {percent:2.0%}",
+        #     font="Font Awesome 5 Free Solid",
+        #     mouse_callbacks={'Button1': open_audio_devices, },
+        # ),
+        widget.PulseVolume(
+            background=theme['p4'],
             foreground=theme['widget-fg'],
             # foreground=theme['dark-magenta'],
-            # format="{percent:2.0%}",
+            # format=" {percent:2.0%}",
+            fmt='{} ',
+            # emoji=True,
             font="Font Awesome 5 Free Solid",
             mouse_callbacks={'Button1': open_audio_devices, },
         ),
-        widget.TextBox(
-            background=theme['light-cyan'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_audio_devices, },
+        lower_left_triangle(
+            bg_color=theme['p4'],
+            fg_color=theme['p5-l'],
         ),
-        widget.Spacer(length=7),
-
-        # -------------
-        #   حرارة المعالج
-        # -------------
-        widget.ThermalZone(
-            background=theme['widget-bg'],
-            foreground=theme['widget-fg'],
-        ),
-        widget.TextBox(
-            background=theme['orange'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-        ),
-        widget.Spacer(length=7),
 
         # --------
         #   النت
         # --------
         widget.Net(
-            background=theme['widget-bg'],
-            foreground=theme['widget-fg'],
+            background=theme['p5-l'],
+            foreground=theme['widget-bg'],
             format='{up}  {down} ',
             font="Font Awesome 5 Free Solid",
         ),
-        widget.TextBox(
-            background=theme['purple'],
-            foreground=theme['widget-fg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_audio_devices, },
+        lower_left_triangle(
+            bg_color=theme['p5-l'],
+            fg_color=theme['bg'],
         ),
-        widget.Spacer(length=7),
 
         # ------------------------------------------------
         # ------------------ بداية الوسط -------------------
         # ------------------------------------------------
         widget.Spacer(),
-        # ----------
-        #   الساعة
-        # ----------
+        lower_left_triangle(
+            bg_color=theme['bg'],
+            fg_color=theme['p7'],
+        ),
         widget.Clock(
-            background=theme['widget-bg'],
-            foreground=theme['widget-fg'],
+            background=theme['p7'],
+            foreground=theme['widget-bg'],
             format="(%I:%M) - %A, %d %B",
         ),
-        widget.TextBox(
-            background=theme['light-yellow'],
-            foreground=theme['widget-bg'],
-            text='',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            margin=2
+        lower_left_triangle(
+            bg_color=theme['p7'],
+            fg_color=theme['bg'],
         ),
         widget.Spacer(),
         # ------------------------------------------------
@@ -387,30 +372,28 @@ screen2_bar = bar.Bar(
         # --------
         #   الرام
         # --------
+        lower_left_triangle(
+            bg_color=theme['bg'],
+            fg_color=theme['p5'],
+        ),
         widget.Memory(
-            background=theme['widget-bg'],
+            background=theme['p5'],
             foreground=theme['widget-fg'],
-            format="{MemPercent: .0f} %",
+            format="{MemPercent: .0f}% ",
             font="Font Awesome 5 Free Solid",
             # plasma-systemmonitor
             mouse_callbacks={'Button1': open_plasma_systemmonitor, },
         ),
-        widget.TextBox(
-            text='',
-            background=theme['dark-blue'],
-            foreground=theme['widget-fg'],
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_plasma_systemmonitor, },
-            margin=2
+        lower_left_triangle(
+            bg_color=theme['p5'],
+            fg_color=theme['p8'],
         ),
-        widget.Spacer(length=7),
 
         # ----------
         #   المعالج
         # ----------
         widget.CPUGraph(
-            background=theme['widget-bg'],
+            background=theme['p8'],
             foreground=theme['widget-fg'],
             fill_color=theme['widget-fg'],
             graph_color=theme['magenta'],
@@ -420,19 +403,14 @@ screen2_bar = bar.Bar(
             line_width=0,
             mouse_callbacks={'Button1': open_gnome_system_monitor, },
         ),
-        widget.TextBox(
-            background=theme['dark-yellow'],
-            foreground=theme['widget-bg'],
-            text=' ',
-            padding=10,
-            font="Font Awesome 5 Free Solid",
-            mouse_callbacks={'Button1': open_gnome_system_monitor, },
+        lower_left_triangle(
+            bg_color=theme['p8'],
+            fg_color=theme['box_bg'],
         ),
-        widget.Spacer(length=7),
 
         widget.GroupBox(
-            background=theme['widget-bg'],
-            foreground=theme["widget-bg"],
+            background=theme['box_bg'],
+            foreground=theme["box_fg"],
             active=theme["widget-fg"],
             inactive=theme["box_inactive"],
 
@@ -447,10 +425,13 @@ screen2_bar = bar.Bar(
             padding=4,
         ),
 
-        widget.Spacer(length=7),
+        lower_left_triangle(
+            bg_color=theme['box_bg'],
+            fg_color=theme['lime'],
+        ),
 
         widget.WindowCount(
-            background=theme['widget-bg'],
+            background=theme['lime'],
             foreground=theme['widget-fg'],
             show_zero=True,
         ),
@@ -461,11 +442,10 @@ screen2_bar = bar.Bar(
             padding=3,
         ),
 
-        widget.Spacer(length=7),
     ],
     background=theme['bg'],
     size=22,
-    border_width=[6, 0, 6, 0],  # Draw top and bottom borders
+    # border_width=[3, 3, 3, 3],  # Draw top and bottom borders
     border_color=[
         theme["bg"],
         theme["bg"],

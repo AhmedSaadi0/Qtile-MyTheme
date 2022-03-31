@@ -40,7 +40,7 @@ workspaces = [
         "name": "4",
         "key": "4",
         "label": "",
-        "layout": "max",
+        "layout": "monadtall",
         "matches": [
             Match(wm_class="dolphin"),
             Match(wm_class="nemo"),
@@ -66,12 +66,12 @@ workspaces = [
         "name": "6",
         "key": "6",
         "label": "",
-        "layout": "Floating",
+        "layout": "floating",
         "matches": [
             Match(wm_class="vlc"),
+            # Match(wm_class="mpv"),
             Match(wm_class="Clementine"),
             Match(wm_class="Pulseeffects"),
-            Match(wm_class="mpv"),
             Match(wm_class="easyeffects"),
         ],
         "spawn": [],

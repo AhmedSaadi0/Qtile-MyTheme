@@ -3,17 +3,16 @@
  * User: leofa
  * Copyright: 2017 leofa
  ***********************************************/
-// #24272d
-// #4badba
+
 * {
-    trans:                       #24272d;
-    selected-normal-foreground:  #24272d;
+    trans:                       #161925;
+    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
     foreground:                  rgba ( 196, 203, 212, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: @trans;
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
-    blue:                        #4badba;
+    blue:                        #bd93f9;
     urgent-foreground:           rgba ( 204, 102, 102, 100 % );
     alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
     active-foreground:           rgba ( 101, 172, 255, 100 % );
@@ -24,10 +23,10 @@
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  #4badba;
-    border-color:                #4badba;
-    spacing:                     0;
-    separatorcolor:              rgba ( 29, 31, 33, 0 % );
+    selected-normal-background:  #bd93f9;
+    border-color:                #bd93f9;
+    spacing:                     2;
+    separatorcolor:              rgba ( 29, 31, 33, 100 % );
     urgent-background:           rgba ( 29, 31, 33, 17 % );
     selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
     alternate-urgent-foreground: @urgent-foreground;
@@ -42,10 +41,10 @@ window {
     border:           1;
     padding:          5;
     height:           271;
-    width:            320;
-    location:		  north west;
-    y-offset:         42;
-    x-offset:         9;
+    width:            520;
+    // location:		  center;
+    y-offset:         32;
+    x-offset:         -10;
     font: "JF Flat 14";
 }
 mainbox {
@@ -134,6 +133,7 @@ button.selected {
     text-color:       @selected-normal-foreground;
 }
 inputbar {
+    text:"";
     spacing:    0;
     text-color: @normal-foreground;
     padding:    1px ;
@@ -166,14 +166,15 @@ inputbar {
 }
 textbox-prompt-colon {
     expand:     true;
-    str:        "";
-	padding:    0px 0px 0px 0px;
+    content:    "التطبيقات قيد التشغيل";
+    // str:        "";
+	padding:    0px 0px 10px 0px;
     text-color: @normal-foreground;
-	font:		"Iosevka Nerd Font 10";
+	// font:		"Iosevka Nerd Font 10";
 }
 
 prompt {
-    enabled: 						true;
+    enabled: 						false;
     padding:                        0px 0px 10px -22px;
 	background-color: 				@background;
 	text-color: 					@foreground;

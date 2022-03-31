@@ -3,11 +3,11 @@
  * User: leofa
  * Copyright: 2017 leofa
  ***********************************************/
-// #24272d
+// #1a0b3288
 // #4badba
 * {
-    trans:                       #24272d;
-    selected-normal-foreground:  #24272d;
+    trans:                       #1a0b3288;
+    selected-normal-foreground:  #19232f;
     foreground:                  rgba ( 196, 203, 212, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: @trans;
@@ -44,7 +44,7 @@ window {
     height:           271;
     width:            320;
     location:		  north west;
-    y-offset:         42;
+    y-offset:         32;
     x-offset:         9;
     font: "JF Flat 14";
 }
@@ -79,15 +79,15 @@ element-text {
     text-color:       inherit;
 }
 element.normal.normal {
-    background-color: @normal-background;
+    // background-color: @normal-background;
     text-color:       @normal-foreground;
 }
 element.normal.urgent {
-    background-color: @urgent-background;
+    // background-color: @urgent-background;
     text-color:       @urgent-foreground;
 }
 element.normal.active {
-    background-color: @active-background;
+    // background-color: @active-background;
     text-color:       @active-foreground;
 }
 element.selected.normal {
@@ -103,15 +103,15 @@ element.selected.active {
     text-color:       @selected-active-foreground;
 }
 element.alternate.normal {
-    background-color: @alternate-normal-background;
+    // background-color: @alternate-normal-background;
     text-color:       @alternate-normal-foreground;
 }
 element.alternate.urgent {
-    background-color: @alternate-urgent-background;
+    // background-color: @alternate-urgent-background;
     text-color:       @alternate-urgent-foreground;
 }
 element.alternate.active {
-    background-color: @alternate-active-background;
+    // background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
@@ -175,6 +175,6 @@ textbox-prompt-colon {
 prompt {
     enabled: 						true;
     padding:                        0px 0px 10px -22px;
-	background-color: 				@background;
+	// background-color: 				@background;
 	text-color: 					@foreground;
 }

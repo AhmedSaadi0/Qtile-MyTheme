@@ -9,7 +9,8 @@ from libqtile.lazy import lazy
 
 # from keys import mod as mod
 from layouts import workspaces
-from my_bar import my_bar, screen2_bar
+# from my_bar import my_bar, screen2_bar
+from bar_power_theme import screen1_bar, screen2_bar
 from keys import keys, MOD as mod
 from colors import style as color
 
@@ -66,16 +67,15 @@ layouts = [
         border_on_single=True,
         border_width=1,
     ),
-    # #0000ff
-    # layout.Columns(
-    #     border_focus="#e6bd7c",
-    #     border_normal="#2c2f36",
-    #     border_on_single=True,
-    #     border_width=1,
-    #     margin=4,
-    #     margin_on_single=4,
-    #     insert_position=1,
-    # ),
+    layout.Columns(
+        border_focus="#e6bd7c",
+        border_normal="#2c2f36",
+        border_on_single=True,
+        border_width=1,
+        margin=4,
+        margin_on_single=4,
+        insert_position=1,
+    ),
     # layout.Stack(num_stacks=2),
     # layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -101,45 +101,44 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         wallpaper_mode="fill",
-        top=my_bar,
-        # bottom=task_bar,
-        # bottom=task_bar,
-        # wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
+        top=screen1_bar,
+        # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/underwater.png",
+        # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_astronautInTheOcean.png",
+        wallpaper="/media/shared/Pictures/fav/new/background.png",
+        # wallpaper="/media/shared/Pictures/fav/day/1.jpg",
+        # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/hotline-miami.jpg",
+        # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/soviet-rocket.jpg",
+        # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/houses.jpg",
         # wallpaper="~/.config/qtile/splash.png",
         # wallpaper="~/.config/qtile/nord.png",
-        # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
-        # wallpaper="/media/shared/Pictures/fav/new/dnord4k_dark.png",
-        wallpaper="/media/shared/Pictures/fav/sourav-ghosh-gTvhFsQMqnA-unsplash.jpg",
     ),
     Screen(
         wallpaper_mode="fill",
         top=screen2_bar,
-        # bottom=task_bar,
-        # bottom=task_bar,
-        # wallpaper="/media/shared/Pictures/fav/krodriguez_pfeiffer_beach.jpg",
-        # wallpaper="~/.config/qtile/splash.png",
-        # wallpaper="~/.config/qtile/nord.png",
-        # wallpaper="/media/shared/Pictures/fav/1920x1080.png",
-        wallpaper="/media/shared/Pictures/fav/new/dnord4k_dark.png",
-        # wallpaper="/media/shared/Pictures/fav/sourav-ghosh-gTvhFsQMqnA-unsplash.jpg",
+        # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/wild.png",
+        wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/houses.jpg",
+
     ),
-    
+
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+    Drag(
+        [mod], "Button1", lazy.window.set_position_floating(),
+        start=lazy.window.get_position()),
+    Drag(
+        [mod], "Button3", lazy.window.set_size_floating(),
+        start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
-bring_front_click = False
+bring_front_click = True
 cursor_warp = False
+
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
@@ -159,6 +158,7 @@ reconfigure_screens = True
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
 auto_minimize = True
+follow_mouse_focus = True
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
