@@ -1,12 +1,12 @@
 # Color-Theme
 <p align='center'>
-	<img alt='Color 1' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220331_170310.png'/>
+	<img alt='Color 1' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-1.png'/>
 </p>
 <p align='center'>
-	<img alt='Color 3' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220331_000109.png'/>
+	<img alt='Color 3' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-3.png'/>
 </p>
 <p align='center'>
-	<img alt='Color 2' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220331_170134.png'/>
+	<img alt='Color 2' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-2.png'/>
 </p>
 
 
