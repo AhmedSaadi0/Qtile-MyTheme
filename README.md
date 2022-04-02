@@ -6,6 +6,9 @@
 	<img alt='Color 3' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-3.png'/>
 </p>
 <p align='center'>
+	<img alt='Color 4' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-4.png'/>
+</p>
+<p align='center'>
 	<img alt='Color 2' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-2.png'/>
 </p>
 
