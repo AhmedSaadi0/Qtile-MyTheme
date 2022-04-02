@@ -1,6 +1,5 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
-from libqtile import extension
 
 TERMINATE = "konsole"
 MUSIC_PLAYER = "clementine"
