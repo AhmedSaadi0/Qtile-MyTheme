@@ -10,7 +10,7 @@ from libqtile.lazy import lazy
 # from keys import mod as mod
 from layouts import workspaces
 # from my_bar import my_bar, screen2_bar
-from bar_power_theme import screen1_bar, screen2_bar
+from bar_color_theme import screen1_bar, screen2_bar
 from keys import keys, MOD as mod
 from colors import style as color
 
@@ -104,7 +104,7 @@ screens = [
         top=screen1_bar,
         # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/underwater.png",
         # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_astronautInTheOcean.png",
-        wallpaper="/media/shared/Pictures/fav/new/background.png",
+        wallpaper="~/.config/qtile/wallpapers/background.png",
         # wallpaper="/media/shared/Pictures/fav/day/1.jpg",
         # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/hotline-miami.jpg",
         # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/soviet-rocket.jpg",
