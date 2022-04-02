@@ -1,3 +1,4 @@
+## Install and use
 ### Required dependencies
 
 - Qtile
