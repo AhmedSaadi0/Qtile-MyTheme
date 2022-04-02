@@ -3,10 +3,10 @@
  * User: leofa
  * Copyright: 2017 leofa
  ***********************************************/
-// #1a0b3288
+// #1f083daa
 // #4badba
 * {
-    trans:                       #1a0b3288;
+    trans:                       #1f083daa;
     selected-normal-foreground:  #19232f;
     foreground:                  rgba ( 196, 203, 212, 100 % );
     normal-foreground:           @foreground;

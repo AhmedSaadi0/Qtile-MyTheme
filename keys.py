@@ -1,6 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
-# from libqtile import qtile
+from libqtile import extension
 
 TERMINATE = "konsole"
 MUSIC_PLAYER = "clementine"
@@ -60,13 +60,18 @@ app_keys = [
         desc="تشغيل easyeffect"
     ),
     Key(
-        [MOD], "x",
+        [MOD], "z",
         lazy.spawn("xcolor -s"),
         desc="اختيار لون من الشاشة"
     ),
     Key(
         [MOD], "Return",
         lazy.spawn(TERMINATE),
+        desc="تشغيل الطرفية"
+    ),
+    Key(
+        [MOD], "t",
+        lazy.spawn("sh .config/qtile/sh/redshift.sh"),
         desc="تشغيل الطرفية"
     ),
 ]
@@ -76,37 +81,42 @@ sys_keys = [
         [],
         "XF86MonBrightnessUp",
         lazy.spawn("brightnessctl set 5%+"),
+        lazy.spawn("sh .config/qtile/sh/show_brightness.sh"),
         desc="رفع مستوى الاضائة"
     ),
     Key(
         [],
         "XF86MonBrightnessDown",
         lazy.spawn("brightnessctl set 5%-"),
+        lazy.spawn("sh .config/qtile/sh/show_brightness.sh"),
         desc="خفض مستوى الاضائة"
     ),
     Key(
         [],
         "XF86AudioRaiseVolume",
-        lazy.spawn("amixer -q sset Master 1%+"),
-        lazy.spawn("notify-send 'مستوى الصوت' -h string:synchronous:volume -h int:value:$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }') -h string:x-canonical-private-synchronous:script"),
+        lazy.spawn("amixer -q sset Master 5%+"),
+        lazy.spawn("sh .config/qtile/sh/show_vol.sh"),
         desc="رفع مستوى الصوت"
     ),
     Key(
         [],
         "XF86AudioLowerVolume",
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
+        lazy.spawn("amixer -q sset Master 5%-"),
+        lazy.spawn("sh .config/qtile/sh/show_vol.sh"),
         desc="خفض مستوى الصوت"
     ),
     Key(
         [],
         "XF86AudioMute",
         lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle"),
+        lazy.spawn("sh .config/qtile/sh/show_vol.sh"),
         desc="كتم الصوت"
     ),
     Key(
         [],
         "XF86AudioMicMute",
         lazy.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle"),
+        # lazy.spawn("sh .config/qtile/sh/show_vol.sh"),
         desc="كتم المايك"
     ),
 ]
@@ -115,15 +125,20 @@ menu_keys = [
     Key(
         [MOD],
         "r",
-        lazy.spawn(
-            f"rofi -show drun -theme/.config/qtile/{ROFI_THEME}/config.rasi"),
+        lazy.spawn("rofi -show drun"),
         desc="عرض قائمة التطبيقات"
     ),
     Key(
         [MOD],
         "l",
         lazy.spawn(
-            f"rofi -show p -MODi p:~/.config/qtile/{ROFI_THEME}/rofi-power-menu -theme ~/.config/qtile/{ROFI_THEME}/power-menu-theme-right"),
+            f"rofi -show p -MODi p:~/.config/qtile/bin/rofi-power-menu -theme ~/.config/qtile/{ROFI_THEME}/power-menu-theme-right"),
+        desc="عرض قائمة الطاقة"
+    ),
+    Key(
+        [MOD],
+        "h",
+        lazy.spawn("rofi -show p -MODi p:~/.config/qtile/bin/oxid"),
         desc="عرض قائمة الطاقة"
     ),
     Key(
@@ -132,6 +147,12 @@ menu_keys = [
         lazy.spawn(
             f"rofi -show windowcd -theme ~/.config/qtile/{ROFI_THEME}/recent-app-theme.rasi"),
         desc="التنقل بين التطبيقات قيد التشغيل"
+    ),
+    Key(
+        [MOD],
+        'x',
+        lazy.spawn("sh .config/qtile/sh/open_notification_center.sh"),
+        desc="الاشعارات"
     ),
 ]
 
@@ -258,7 +279,7 @@ window_keys = [
         [MOD],
         "n",
         lazy.window.toggle_minimize(),
-        desc=''
+        desc='تصغير النافذة'
     ),
 ]
 

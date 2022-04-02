@@ -5,14 +5,14 @@
  ***********************************************/
 
 * {
-    trans:                       #161925;
-    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
+    trans:                       #1f083daa;
+    selected-normal-foreground:  #19232f;
     foreground:                  rgba ( 196, 203, 212, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: @trans;
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
-    blue:                        #bd93f9;
+    blue:                        #4badba;
     urgent-foreground:           rgba ( 204, 102, 102, 100 % );
     alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
     active-foreground:           rgba ( 101, 172, 255, 100 % );
@@ -23,10 +23,10 @@
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  #bd93f9;
-    border-color:                #bd93f9;
-    spacing:                     2;
-    separatorcolor:              rgba ( 29, 31, 33, 100 % );
+    selected-normal-background:  #4badba;
+    border-color:                #4badba;
+    spacing:                     0;
+    separatorcolor:              rgba ( 29, 31, 33, 0 % );
     urgent-background:           rgba ( 29, 31, 33, 17 % );
     selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
     alternate-urgent-foreground: @urgent-foreground;

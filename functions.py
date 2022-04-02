@@ -18,6 +18,10 @@ def open_plasma_systemmonitor():
     qtile.cmd_spawn("plasma-systemmonitor")
 
 
+def open_notification_center():
+    qtile.cmd_spawn("sh .config/qtile/sh/open_notification_center.sh")
+
+
 def open_gnome_system_monitor():
     qtile.cmd_spawn("gnome-system-monitor")
 
@@ -28,7 +32,7 @@ def open_audio_devices():
 
 def open_power_options():
     qtile.cmd_spawn(
-        f"rofi -show p -MODi p:~/.config/qtile/{ROFI_THEME}/rofi-power-menu -theme ~/.config/qtile/{ROFI_THEME}/power-menu-theme-right"
+        f"rofi -show p -MODi p:~/.config/qtile/bin/rofi-power-menu -theme ~/.config/qtile/{ROFI_THEME}/power-menu-theme-right"
     )
 
 

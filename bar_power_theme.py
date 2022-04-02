@@ -1,7 +1,7 @@
 from libqtile import bar, widget
 
 from colors import c1_gradients as theme
-from functions import (open_audio_devices, open_gnome_system_monitor,
+from functions import (open_audio_devices, open_gnome_system_monitor, open_notification_center,
                        open_plasma_systemmonitor, open_power_options,
                        open_xfce4_power_manager_settings, toggle_redshift)
 
@@ -9,7 +9,7 @@ from functions import (open_audio_devices, open_gnome_system_monitor,
 def lower_left_triangle(bg_color, fg_color):
     return widget.TextBox(
         text='\u25e2',
-        padding=-3,
+        padding=-4,
         fontsize=65,
         font="Font Awesome 5 Free Solid",
         background=bg_color,
@@ -33,7 +33,7 @@ screen1_bar = bar.Bar(
         # ),
         widget.TextBox(
             background=theme['p1'],
-            foreground=theme['widget-fg'],
+            foreground=theme['widget-bg'],
             text='',
             # padding=10,
             # font="Font Awesome 5 Free Solid",
@@ -41,6 +41,19 @@ screen1_bar = bar.Bar(
         ),
         lower_left_triangle(
             bg_color=theme['p1'],
+            fg_color=theme['p6'],
+        ),
+
+        widget.TextBox(
+            background=theme['p6'],
+            foreground=theme['widget-fg'],
+            text='',
+            # padding=10,
+            # font="Font Awesome 5 Free Solid",
+            mouse_callbacks={'Button1': open_notification_center, },
+        ),
+        lower_left_triangle(
+            bg_color=theme['p6'],
             fg_color=theme['p2'],
         ),
 
@@ -62,25 +75,31 @@ screen1_bar = bar.Bar(
         widget.Battery(
             background=theme['p3'],
             foreground=theme['widget-fg'],
-            # foreground=theme['dark-magenta'],
-            format="{percent:2.0%}",
+            low_background=theme['danger'],
+            low_percentage=0.2,
+            format="{percent:2.0%} {char}",
             charge_char="",
-            empty_char="",
-            full_char="",
+            full_char="",
+            empty_char="",
+            discharge_char="",
+            unknown_char="",
+            update_interval=1,
             font="Font Awesome 5 Free Solid",
-            notify_below=25,
+            notify_below=20,
             mouse_callbacks={
                 'Button1': open_xfce4_power_manager_settings, },
         ),
-        widget.BatteryIcon(
-            background=theme['p3'],
-            mouse_callbacks={
-                'Button1': open_xfce4_power_manager_settings, },
-            # scale=1,
-            # color_path="/home/ahmed/.config/qtile/battery-icons"
-            # foreground=theme['dark-magenta'],
-            # format="{watt:.2f} W - {percent:2.0%} ",
-        ),
+        # widget.BatteryIcon(
+        #     background=theme['p3'],
+        #     mouse_callbacks={
+        #         'Button1': open_xfce4_power_manager_settings, },
+        #     update_interval=1,
+        #     notify_below=20,
+        #     theme_path="/home/docs/checkouts/readthedocs.org/user_builds/qtile/checkouts/latest/libqtile/resources/battery-icons",
+        #     # scale=1,
+        #     # foreground=theme['dark-magenta'],
+        #     # format="{watt:.2f} W - {percent:2.0%} ",
+        # ),
         lower_left_triangle(
             bg_color=theme['p3'],
             fg_color=theme['p4'],
@@ -281,25 +300,20 @@ screen2_bar = bar.Bar(
         # ----------
         widget.Battery(
             background=theme['p1'],
-            foreground=theme['widget-fg'],
-            # foreground=theme['dark-magenta'],
-            format="{percent:2.0%}",
+            foreground=theme['widget-bg'],
+            low_background=theme['danger'],
+            low_percentage=0.2,
+            format="{percent:2.0%} {char}",
             charge_char="",
-            empty_char="",
-            full_char="",
+            full_char="",
+            empty_char="",
+            discharge_char="",
+            unknown_char="",
+            update_interval=1,
             font="Font Awesome 5 Free Solid",
-            notify_below=25,
+            # notify_below=20,
             mouse_callbacks={
                 'Button1': open_xfce4_power_manager_settings, },
-        ),
-        widget.BatteryIcon(
-            background=theme['p1'],
-            mouse_callbacks={
-                'Button1': open_xfce4_power_manager_settings, },
-            # scale=1,
-            # color_path="/home/ahmed/.config/qtile/battery-icons"
-            # foreground=theme['dark-magenta'],
-            # format="{watt:.2f} W - {percent:2.0%} ",
         ),
         lower_left_triangle(
             bg_color=theme['p1'],
@@ -317,7 +331,7 @@ screen2_bar = bar.Bar(
         #     font="Font Awesome 5 Free Solid",
         #     mouse_callbacks={'Button1': open_audio_devices, },
         # ),
-        widget.PulseVolume(
+        widget.Volume(
             background=theme['p4'],
             foreground=theme['widget-fg'],
             # foreground=theme['dark-magenta'],

@@ -32,6 +32,7 @@
         "gruvbox",
         "hexlify",
         "hopofy",
+        "kscreen",
         "libqtile",
         "Listbox",
         "myusers",
@@ -39,6 +40,8 @@
         "nord",
         "oninput",
         "pactl",
+        "pavucontrol",
+        "picom",
         "Popen",
         "psycopg",
         "qtile",
@@ -49,6 +52,7 @@
         "urandom",
         "windowcd",
         "xcolor",
+        "xfce",
         "xprop"
     ],
     "cSpell.ignoreRegExpList": [

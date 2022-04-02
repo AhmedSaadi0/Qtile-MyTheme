@@ -18,7 +18,7 @@ configuration
 {
 	font:							"JF Flat 11";
 	foreground:						#f8f8f2; 
-	background:						#1b0c34aa;
+	background:						#1b0c34bb;
 	foreground-alt:					#4badba55;
 	background-alt:					#2e344055;
 	active-background:				#4badba;

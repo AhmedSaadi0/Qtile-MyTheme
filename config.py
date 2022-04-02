@@ -180,4 +180,3 @@ def autostart():
 def set_screens():
     home = os.path.expanduser('~/.config/qtile/sh/set-screens.sh')
     subprocess.run([home])
-
