@@ -8,8 +8,7 @@ FILE_MANAGER = "dolphin"
 MOD = "mod4"
 ALT = "mod1"
 
-ROFI_THEME = 'rofi-colors'
-
+ROFI_THEME = 'rofi-new-dracula'
 
 app_keys = [
     Key(
@@ -45,7 +44,7 @@ app_keys = [
     Key(
         [MOD, "shift"],
         "p",
-        lazy.spawn("prime-run pycharm"),
+        lazy.spawn("pycharm"),
         desc="تشغيل pycharm"
     ),
     Key(
@@ -71,7 +70,7 @@ app_keys = [
     Key(
         [MOD], "t",
         lazy.spawn("sh .config/qtile/sh/redshift.sh"),
-        desc="تشغيل الطرفية"
+        desc="وضع القراءة"
     ),
 ]
 

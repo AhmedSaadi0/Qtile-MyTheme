@@ -9,10 +9,13 @@ from libqtile.lazy import lazy
 
 # from keys import mod as mod
 from layouts import workspaces
-# from my_bar import my_bar, screen2_bar
-from bar_color_theme import screen1_bar, screen2_bar
 from keys import keys, MOD as mod
-from colors import style as color
+
+from theme import (
+    S_BAR1 as screen1_bar,
+    S_BAR2 as screen2_bar,
+    COLOR as color,
+)
 
 groups = []
 
@@ -68,8 +71,8 @@ layouts = [
         border_width=1,
     ),
     layout.Columns(
-        border_focus="#e6bd7c",
-        border_normal="#2c2f36",
+        border_focus=color["border_active"],
+        border_normal=color['border_inactive'],
         border_on_single=True,
         border_width=1,
         margin=4,
@@ -102,9 +105,11 @@ screens = [
     Screen(
         wallpaper_mode="fill",
         top=screen1_bar,
-        # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/underwater.png",
+        # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_sunGarden.png",
+        # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_stuff.png",
+        wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_astronaut.png",
         # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_astronautInTheOcean.png",
-        wallpaper="~/.config/qtile/wallpapers/background.png",
+        # wallpaper="~/.config/qtile/wallpapers/background.png",
         # wallpaper="/media/shared/Pictures/fav/day/1.jpg",
         # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/hotline-miami.jpg",
         # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/soviet-rocket.jpg",
@@ -116,7 +121,8 @@ screens = [
         wallpaper_mode="fill",
         top=screen2_bar,
         # wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/wild.png",
-        wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/houses.jpg",
+        # wallpaper="/media/shared/Pictures/fav/new/gruvbox-wallpaper/houses.jpg",
+        wallpaper="/media/shared/Pictures/fav/new/nordic-wallpapers/ign_stuff.png",
     ),
 
 ]

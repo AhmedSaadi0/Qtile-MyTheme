@@ -8,10 +8,20 @@ from functions import (open_audio_devices, open_gnome_system_monitor, open_notif
 
 def lower_left_triangle(bg_color, fg_color):
     return widget.TextBox(
-        text='\u25e2',
-        padding=-4,
-        fontsize=65,
-        font="Font Awesome 5 Free Solid",
+        text='',
+        padding=0,
+        fontsize=18,
+        font="Iosevka Custom",
+        background=bg_color,
+        foreground=fg_color,
+    )
+
+def lower_right_triangle(bg_color, fg_color):
+    return widget.TextBox(
+        text='',
+        padding=0,
+        fontsize=18,
+        font="Iosevka Custom",
         background=bg_color,
         foreground=fg_color,
     )
@@ -167,19 +177,19 @@ screen1_bar = bar.Bar(
         # ------------------ بداية الوسط -------------------
         # ------------------------------------------------
         widget.Spacer(),
-        lower_left_triangle(
-            bg_color=theme['bg'],
-            fg_color=theme['p7'],
-        ),
+        # lower_left_triangle(
+        #     bg_color=theme['bg'],
+        #     fg_color=theme['p7'],
+        # ),
         widget.Clock(
             background=theme['p7'],
             foreground=theme['widget-bg'],
-            format="(%I:%M) - %A, %d %B",
+            format="(%I:%M) - %A, %d %B ",
         ),
-        lower_left_triangle(
-            bg_color=theme['p7'],
-            fg_color=theme['bg'],
-        ),
+        # lower_right_triangle(
+        #     bg_color=theme['bg'],
+        #     fg_color=theme['p7'],
+        # ),
         widget.Spacer(),
         # ------------------------------------------------
         # ------------------ نهاية الوسط -------------------
@@ -279,7 +289,7 @@ screen1_bar = bar.Bar(
     ],
     background=theme['bg'],
     size=22,
-    # border_width=[3, 3, 3, 3],  # Draw top and bottom borders
+    border_width=[3, 3, 3, 3],  # Draw top and bottom borders
     border_color=[
         theme["bg"],
         theme["bg"],

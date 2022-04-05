@@ -1,0 +1,210 @@
+/* Notification center */
+
+.blurredBG,
+.blurredBG.low,
+.blurredBG.normal {
+    background: rgba(31, 8, 61, 0.7);
+    border: 1px solid #4bacb9;
+}
+
+
+.noti-center.time {
+    font-size: 42px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-right: 125px;
+    /* margin-left: 300px; 1f083d */
+}
+
+.noti-center.date {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-right: 122px;
+    /* margin-left: 300px; 1f083d */
+}
+
+/* Notifications  */
+
+/* In Center */
+.notificationInCenter {
+    background: rgba(22, 6, 44, 0.9);
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid #4bacb9;
+}
+
+button.deadd-noti-center.in-center.button-close {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    
+}
+
+.delete-all {
+    margin-left: 290px;
+    margin-bottom: 12px;
+    
+}
+
+/* Floating Notification */
+label.deadd-noti-center.notification.body {
+    margin-top: 12px;
+    margin-bottom: -5px;
+}
+
+
+.blurredBG.notification {
+    background: rgba(31, 8, 61, 0.7);
+    border-width: 1px;
+    border-color: #4bacb9;
+}
+
+.blurredBG.notification.critical {
+    background: rgba(255, 0, 0, 0.5);
+    border-width: 1px;
+    border-color: #4bacb9;
+}
+
+.notificationInCenter.critical {
+    background: rgba(155, 0, 20, 0.5);
+    border-width: 1px;
+    border-color: #4bacb9;
+}
+
+/* Labels */
+
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.appname {
+    font-size: 14px;
+    /* background: rgba(31, 8, 61, 1); */
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    /* border-bottom: 1px solid #4bacb9; */
+}
+
+.time {
+    font-size: 12px;
+    /* background: rgba(193, 145, 255, 0.068); */
+    margin-top: 10px;
+    /* border-bottom: 1px solid #4bacb9; */
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.deadd-noti-center.notification.icon {
+    /* background: rgba(193, 145, 255, 0.068); */
+    margin-top: 10px;
+    /* border-bottom: 1px solid #4bacb9; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    margin-left: -5px;
+    padding-left: 20px;
+}
+
+label {
+    color: #c0c8d7;
+}
+
+label.notification {
+    color: #c0c8d7;
+}
+
+label.critical {
+    color: #ff00dd;
+}
+
+/* Buttons */
+
+button {
+    background: transparent;
+    color: #c0c8d7;
+    
+    border-width: 1px;
+    background-position: 0px 0px;
+    text-shadow: none;
+
+}
+
+button:hover {
+    
+    background: rgba(75, 173, 186, 0.2);
+    border-width: 0px;
+    border-top: transparent;
+    border-color: #4bacb9;
+    /* color: #fee; */
+}
+
+
+/* Custom Buttons */
+.userbutton {
+    background: rgba(31, 8, 61, 0.7);
+    border-width: 1px;
+    border-color: rgba(75, 172, 185, 0.473);
+    margin-bottom: 10px;
+    margin-top: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.userbuttonlabel {
+    color: rgb(201, 201, 201);
+    font-size: 12px;
+}
+
+.userbutton:hover {
+    background: rgba(236, 236, 236, 0.2);
+}
+
+.userbuttonlabel:hover {
+    color: rgb(221, 221, 221);
+}
+
+button.buttonState1 {
+    background: rgba(214, 214, 214, 0.5);
+}
+
+.userbuttonlabel.buttonState1 {
+    color: #c0c8d7;
+}
+
+button.buttonState1:hover {
+    background: rgba(221, 221, 221, 0.4);
+}
+
+.userbuttonlabel.buttonState1:hover {
+    color: rgb(212, 212, 212);
+}
+
+button.buttonState2 {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.userbuttonlabel.buttonState2 {
+    color: rgb(243, 243, 243);
+}
+
+button.buttonState2:hover {
+    background: rgba(243, 243, 243, 0.3);
+}
+
+.userbuttonlabel.buttonState2:hover {
+    color: #ffffff;
+}
+
+
+/* Images */
+
+image.deadd-noti-center.notification.image {
+    margin-left: 20px;
+}

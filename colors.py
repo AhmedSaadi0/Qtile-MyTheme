@@ -1,41 +1,43 @@
 dracula = {
     'dark-bg':      '#161925',
     # 'bg':           '#00000000',
-    'bg':           '#232634',
-    'fg':           '#bd93f9',
+    'bg':           '#21222c',
+    'fg':           '#f8f8f2',
+    'cyan':         '#8be9fd',
+    'green':        '#50fa7b',
+    'orange':       '#ffb86c',
+    'pink':         '#ff79c6',
+    'purple':       '#bd93f9',
+    'red':          '#ff5555',
+    'yellow':       '#f1fa8c',
+
     'dark-red':     '#cc241d',
-    'red':          '#fb4934',
-    'orange':       '#e67b46',
     'dark-green':   '#98971a',
-    'green':        '#b8bb26',
     'good_green':   '#00b19f',
     'dark-yellow':  '#d79921',
-    'yellow':       '#fabd2f',
     'light-yellow': '#e9d65f',
     'dark-blue':    '#458588',
     'blue':         '#83a598',
     'lime':         '#43a047',
-    'purple':       '#be78d6',
     'light-cyan':   '#09c3ef',
     'dark-magenta': '#b16286',
     'magenta':      '#e06c75',
     'dark-cyan':    '#689d6a',
-    'cyan':         '#8ec07c',
     'dark-gray':    '#3d3d3d',
     'gray':         '#666666',
 
-    'widget-bg':    '#eceff4',
+    'widget-bg':    '#272d37',
     'widget-fg':    '#4c566a',
 
     'box_bg': "#e3f2fd",
-    'box_fg': "#262926",
-    'box_active': "#9e9e9e",
-    'box_inactive': "#3b4252",
-    'block_highlight': "#262926",
-    'box_highlight': "#9e9e9e",
+    'box_fg': "#d79921",
+    'box_active': "#ff79c6",
+    'box_inactive': "#2e5888",
+    'block_highlight': "#8be9fd",
+    'box_highlight': "#2e3440",
 
-    'border_active':    '#bd93f9',
-    'border_inactive':  '#689d6a',
+    'border_active':    '#ff79c6',
+    'border_inactive':  '#458588',
 }
 
 nord_dark = {
@@ -122,11 +124,11 @@ gruvbox_dark = {
 }
 
 
-style = nord_dark
+style = dracula
 
 
 # NEW COLORS
-c1_gradients = {
+c1 = {
     'bg': "#4b44b6",
     'fg': "#a1a9b7",
 
