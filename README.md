@@ -62,6 +62,18 @@ in keys.py change
 	<img alt='Color 2' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/c-2.png'/>
 </p>
 
+# New-Dracula-Theme
+
+<p align='center'>
+	<img alt='image 1' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220406_020851.png'/>
+</p>
+<p align='center'>
+	<img alt='image 2' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220406_021757.png'/>
+</p>
+<p align='center'>
+	<img alt='image 3' src='https://github.com/AhmedSaadi0/Qtile-Dracula/blob/master/screenshots/Screenshot_20220406_022852.png'/>
+</p>
+
 # Nord-Theme
 
 <p align='center'>
